@@ -431,6 +431,17 @@
             });
         });
 
+        // Make entire category option clickable
+        document.querySelectorAll('.category-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                const radio = option.querySelector('input[type="radio"]');
+                if (radio && e.target !== radio) {
+                    radio.checked = true;
+                    radio.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+
         startCameraBtn.addEventListener('click', async () => {
             try {
                 stream = await navigator.mediaDevices.getUserMedia({
@@ -449,6 +460,12 @@
         });
 
         capturePhotoBtn.addEventListener('click', () => {
+            // Check if category is selected
+            if (!selectedCategory) {
+                showStatus('Please select a category first!', 'error');
+                return;
+            }
+            
             // Set canvas to target resolution
             canvas.width = 512;
             canvas.height = 384;
