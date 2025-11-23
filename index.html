@@ -137,9 +137,11 @@
         #sendData {
             background: #FF9800;
             color: white;
+            width: 100%;
+            margin-bottom: 15px;
         }
 
-        #sendData:hover {
+        #sendData:hover:not(:disabled) {
             background: #F57C00;
         }
 
@@ -366,15 +368,15 @@
         </div>
 
         <div class="auto-upload-section">
-            <span>Auto-Upload:</span>
+            <span>Auto-upload after capture:</span>
             <div class="toggle-switch" id="autoUploadToggle"></div>
         </div>
+
+        <button id="sendData" disabled>Send to Dataset</button>
 
         <div class="preview-section">
             <img id="photoPreview" class="hidden" alt="Photo Preview">
         </div>
-
-        <button id="sendData" disabled>Send to Dataset</button>
 
         <div id="status" class="status hidden"></div>
 
