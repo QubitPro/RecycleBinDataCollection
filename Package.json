@@ -1,0 +1,10 @@
+{
+  "name": "recycle-waste-collection",
+  "version": "1.0.0",
+  "description": "Waste dataset collection app",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel"
+  }
+}
