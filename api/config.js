@@ -20,7 +20,7 @@ module.exports = (req, res) => {
   // Return configuration from environment variables
   res.status(200).json({
     githubToken: process.env.GITHUB_TOKEN,
-    repo: process.env.GITHUB_REPO || 'sumiyajid/RecycleBinDataCollection',
+    repo: process.env.GITHUB_REPO || 'QubitPro/RecycleBinDataCollection',
     folderPath: process.env.FOLDER_PATH || 'Dataset'
   });
 };
